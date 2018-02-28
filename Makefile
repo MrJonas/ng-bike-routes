@@ -11,9 +11,9 @@ deploy:
 	@echo "Uploading and running app in a docker container"
 	@echo "-------------------------------------------------------"
 	@ssh root@$(SERVER_IP) \
-		" rm -rf react-server-side-rendering; \
-		git clone https://github.com/MrJonas/react-server-side-rendering.git; \
-		cd react-server-side-rendering ; \
+		" rm -rf ng-bike-routes; \
+		git clone https://github.com/MrJonas/ng-bike-routes.git; \
+		cd ng-bike-routes ; \
 		docker stop $(CONTAINER_NAME) ; \
 		docker rm $(CONTAINER_NAME) ; \
 		docker build --tag $(IMAGE_NAME) . ; \

@@ -1,12 +1,13 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
-    path: __dirname,
-    filename: "./dist/bundle.js"
+    path: './dist/',
+    filename: "bundle.js"
   },
   devtool: "cheap-module-source-map",
   module: {
@@ -15,8 +16,7 @@ const browserConfig = {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
         options: {
-          name: "dist/media/[name].[ext]",
-          publicPath: url => url.replace(/dist/, "")
+          name: "dist/media/[name].[ext]"
         }
       },
       {
@@ -45,7 +45,10 @@ const browserConfig = {
   plugins: [
     new ExtractTextPlugin({
       filename: "dist/css/[name].css"
-    })
+    }),
+    new CopyWebpackPlugin([
+        {from: 'src/assets'}
+    ])
   ]
 };
 

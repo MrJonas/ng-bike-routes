@@ -3,7 +3,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { Provider } from "react-redux";
 import { StaticRouter, matchPath } from "react-router-dom";
-import serialize from "serialize-javascript";
+import {getHtml} from './render.helpers'
 import routes from "../shared/routes";
 import configureStore from "./../shared/store/";
 import App from "../shared/App";
@@ -39,19 +39,7 @@ app.get("*", (req, res, next) => {
       );
 
       const initialData = store.getState();
-      res.send(`<!DOCTYPE html>
-        <html>
-          <head>
-            <title>App</title>
-            <link rel="stylesheet" href="/css/main.css">
-            <script src="/bundle.js" defer></script>
-            <script>window.__initialData__ = ${serialize(initialData)}</script>
-          </head>
-          <body>
-            <div id="root">${markup}</div>
-          </body>
-        </html>
-      `);
+      res.send(getHtml(initialData, markup));
     })
     .catch(next);
 });
