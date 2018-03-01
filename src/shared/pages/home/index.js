@@ -1,26 +1,28 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./index.css";
+import React from 'react';
+import 'whatwg-fetch';
+import Footer from './../../components/footer';
+import WelcomeBox from "./components/welcome.box";
+import DistanceCounter from "./components/distance.counter";
+import LatestRoutes from "./components/latest.routes";
 
-class Home extends Component {
-  render() {
-    return (
-      <div className="home">
-        <header>
-            Main page
-        </header>
-        <aside>
-          <p className="selected">About</p>
-          <p>
-            <Link to="/news">Wizard News</Link>
-          </p>
-        </aside>
-        <article>
-            <p>Main page </p>
-        </article>
-      </div>
-    );
-  }
-}
+
+class Home extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <div className="page-layout">
+                    <WelcomeBox/>
+                    <LatestRoutes/>
+                    <DistanceCounter/>
+                </div>
+                <Footer/>
+            </div>
+
+        );
+    }
+};
 
 export default Home;
+
+

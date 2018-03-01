@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bootstrap": "4.0.0-alpha.6",
     "cors": "^2.8.4",
     "express": "^4.15.3",
     "gridfs-stream": "^1.1.1",
@@ -20,15 +21,20 @@
     "mongoose": "4.11.9",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-facebook": "^4.2.1",
+    "react-google-maps": "^9.4.5",
+    "react-grid-gallery": "^0.4.8",
+    "react-lazyload": "^2.3.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-transition-group": "^1.2.1",
     "reactstrap": "4.8.0",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "serialize-javascript": "^1.4.0",
     "source-map-support": "^0.4.15",
-    "bootstrap": "4.0.0-alpha.6"
+    "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
