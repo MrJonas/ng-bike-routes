@@ -12,6 +12,10 @@ const browserConfig = {
   devtool: "cheap-module-source-map",
   module: {
     rules: [
+        {
+            test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
+            loader: 'url-loader?limit=100000&name=./public/build/[hash].[ext]'
+        },
       {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
@@ -44,7 +48,7 @@ const browserConfig = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: "dist/css/[name].css"
+      filename: "css/[name].css"
     }),
     new CopyWebpackPlugin([
         {from: 'src/assets'}
@@ -85,7 +89,11 @@ const serverConfig = {
         exclude: /(node_modules)/,
         loader: "babel-loader",
         query: { presets: ["react-app"] }
-      }
+      },
+        {
+            test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
+            loader: 'url-loader?limit=100000&name=./public/build/[hash].[ext]'
+        }
     ]
   }
 };

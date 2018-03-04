@@ -15,14 +15,14 @@ class WelcomeBox extends React.Component {
                                 apžvelgia
                                 maršrutus, įveiktus laisvalaikiu.</p>
                             <hr className="my-2"/>
-                            <p>Maršrutų žemėlapis, lankytinos vietos, įspūdžiai bei patarimai - viskas apie turistinius
+                            <p className="lead">Maršrutų žemėlapis, lankytinos vietos, įspūdžiai bei patarimai - viskas apie turistinius
                                 žygius
                                 dviračiais.</p>
                             <p className="lead">
                                 <Route render={({ history}) => (
                                     <Button
                                         color="primary"
-                                        onClick={() => { history.push(`/marsrutai/`) }}
+                                        onClick={() => { history.push(`/zemelapis`) }}
                                     >
                                         Rodyti maršrutų žemėlapį!
                                     </Button>

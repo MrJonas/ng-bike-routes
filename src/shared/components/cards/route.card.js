@@ -4,7 +4,6 @@ import {
     CardTitle, CardSubtitle, CardFooter, Button
 } from 'reactstrap';
 import {Route} from 'react-router-dom';
-import LazyLoad from 'react-lazyload';
 
 class RouteCard extends React.Component {
 
@@ -15,13 +14,12 @@ class RouteCard extends React.Component {
     render() {
         return (
             <div>
+                {/*<a href={`/marsrutas/${this.props.bikeRoute.url}`}>*/}
                 <Route render={({history}) => (
                 <Card className="route-card" onClick={() => this.goToRoutePage(history)}>
-                    <LazyLoad >
                     <CardImg top width="100%" src={`/api/images/${this.props.bikeRoute.main_image_id}`}
                              alt={this.props.bikeRoute.title}
                              style={{cursor: 'pointer'}}/>
-                    </LazyLoad>
                     <CardBlock>
                         <CardTitle className="text-center" style={{cursor: 'pointer'}}>{this.props.bikeRoute.title}</CardTitle>
                         <CardSubtitle className="text-muted text-center">
@@ -37,6 +35,7 @@ class RouteCard extends React.Component {
                     </CardFooter>
                 </Card>
                 )}/>
+                {/*</a>*/}
             </div>
         );
     }

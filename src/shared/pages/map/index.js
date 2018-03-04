@@ -3,8 +3,14 @@ import 'whatwg-fetch';
 import {RouteMap} from './components/route.map';
 import {RouteList} from './components/route.map.side.list';
 import {RouteHeader} from './components/route.map.header';
+import {fetchAllRoutes} from "../../actions";
+import {connect} from "react-redux";
 
 class MapPage extends React.Component {
+
+    static initialAction() {
+        return fetchAllRoutes();
+    }
 
     constructor(props) {
         super(props);
@@ -15,11 +21,18 @@ class MapPage extends React.Component {
         };
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.routes && nextProps.routes.length > 0) {
+            this.setState({routes:nextProps.routes});
+        }
+    }
+
     componentDidMount() {
-        fetch('/api/route/all').then(result => {
-            result.json().then(routes => this.setState({routes}), err => console.log(err))
-        }, err => {
-        });
+        if (!this.props.routes) {
+            this.props.dispatch(MapPage.initialAction());
+        } else {
+            this.setState({routes:this.props.routes});
+        }
     }
 
     setRoute(index) {
@@ -66,5 +79,10 @@ class MapPage extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+   return {
+        routes: state.routes
+    }
+};
 
-export default MapPage;
+export default connect(mapStateToProps)(MapPage);

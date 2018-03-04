@@ -114,7 +114,7 @@ h4 {
   background: linear-gradient(
           rgba(0, 0, 0, 0.2),
           rgba(0, 0, 0, 0.2)
-  ), url('/img/bike.jpg') no-repeat;
+  ), url('/bike.jpg') no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -145,7 +145,7 @@ body {
   background: linear-gradient(
           rgba(200, 200, 200, 0.4),
           rgba(200, 200, 200, 0.4)
-  ), url('/img/topography.png') repeat;
+  ), url('/topography.png') repeat;
 }
 
 .page-layout {

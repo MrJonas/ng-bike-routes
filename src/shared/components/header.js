@@ -37,7 +37,7 @@ export default class Example extends React.Component {
                     <NavbarToggler style={{color: "white"}}aria-hidden="true" right onClick={this.toggle} >
                         <i className="fa fa-bars" aria-hidden="true"></i>
                     </NavbarToggler>
-                    <NavbarBrand href="/#/">Dviračių maršrutai</NavbarBrand>
+                    <NavbarBrand href="/">Dviračių maršrutai</NavbarBrand>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>

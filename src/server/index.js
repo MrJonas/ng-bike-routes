@@ -8,12 +8,14 @@ import routes from "../shared/routes";
 import configureStore from "./../shared/store/";
 import App from "../shared/App";
 import "source-map-support/register";
-
+import compression from 'compression';
 import api from "./api/index";
 
 const app = express();
 
-app.use(express.static("dist"));
+app.use(compression());
+
+app.use(express.static("dist/"));
 
 app.use("/api", api);
 
@@ -21,8 +23,13 @@ app.get("*", (req, res, next) => {
   const store = configureStore();
 
   const promises = routes.reduce((acc, route) => {
+    console.log(req.url);
     if (matchPath(req.url, route) && route.component && route.component.initialAction) {
-      acc.push(Promise.resolve(store.dispatch(route.component.initialAction())));
+        if(req.url.includes('/marsrutas/')) {
+            acc.push(Promise.resolve(store.dispatch(route.component.initialAction(req.url.replace('/marsrutas/', '')))));
+        } else {
+            acc.push(Promise.resolve(store.dispatch(route.component.initialAction())));
+        }
     }
     return acc;
   }, []);
@@ -39,6 +46,7 @@ app.get("*", (req, res, next) => {
       );
 
       const initialData = store.getState();
+
       res.send(getHtml(initialData, markup));
     })
     .catch(next);

@@ -10,7 +10,7 @@ export class RouteList extends React.Component {
     render() {
         return (
             <div>
-                {this.props.routes.map((route, index) =>
+                {this.props.routes && this.props.routes.map((route, index) =>
                     this.props.route.url === route.url ?
                         <div className="card card-inverse" key={route.url} style={{cursor: 'pointer'}}>
                             <img className="card-img"

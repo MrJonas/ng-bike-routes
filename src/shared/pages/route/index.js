@@ -2,14 +2,19 @@ import React from 'react';
 import 'whatwg-fetch';
 import {Card, CardTitle, CardBlock} from 'reactstrap';
 import Footer from './../../components/footer';
-import LazyLoad from 'react-lazyload';
 import Gallery from 'react-grid-gallery';
 import FacebookProvider, { Page, Share } from 'react-facebook';
+import {fetchOneRoute} from "../../actions";
+import {connect} from "react-redux";
 
 const DMGallery = (props) =>
     <Gallery images={props.images} maxRows={3}/>;
 
 class RoutePage extends React.Component {
+
+    static initialAction(url) {
+        return fetchOneRoute(url);
+    }
 
     constructor() {
         super();
@@ -30,14 +35,19 @@ class RoutePage extends React.Component {
     }
 
     componentDidMount() {
-        document.addEventListener('fb_init', e => FB.XFBML.parse());
-        fetch(`/api/route/${this.props.match.params.url}`)
-            .then(result => {
-                result.json().then(
-                    route => this.setRoute(route),
-                    err => console.log(err))
+        console.log(this.props)
+        if (!this.props.route ) {
+            this.props.dispatch(RoutePage.initialAction(this.props.match.params.url));
+        } else {
+            document.addEventListener('fb_init', e => FB.XFBML.parse());
+            this.setRoute(this.props.route);
+        }
+    }
 
-            }, err => console.log(err));
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.route) {
+            this.setState({route:nextProps.route});
+        }
     }
 
     render() {
@@ -51,14 +61,7 @@ class RoutePage extends React.Component {
                             <Card className="route-text">
                                 <CardBlock>
                                     <CardTitle className="text-left">{this.state.route.title}</CardTitle>
-                                    <FacebookProvider appId="222603034981490">
-                                        <Share href="https://dviraciumarsrutai.lt/#/marsrutas/traku_apylinkes">
-                                            <button type="button">Dalintis</button>
-                                        </Share>
-                                    </FacebookProvider>
-                                    <LazyLoad>
-                                        <div dangerouslySetInnerHTML={{__html: this.state.route.body}}></div>
-                                    </LazyLoad>
+                                    <div dangerouslySetInnerHTML={{__html: this.state.route.body}}></div>
                                 </CardBlock>
                             </Card>
 
@@ -124,4 +127,9 @@ class RoutePage extends React.Component {
 }
 ;
 
-export default RoutePage;
+const mapStateToProps = state => ({
+    route: state.route.route
+});
+
+
+export default connect(mapStateToProps)(RoutePage);

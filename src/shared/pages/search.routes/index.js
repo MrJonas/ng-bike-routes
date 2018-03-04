@@ -4,8 +4,14 @@ import RouteCard from './../../components/cards/route.card';
 import {InputGroup, InputGroupAddon, Input} from 'reactstrap';
 import Footer from './../../components/footer';
 import {debounce} from 'throttle-debounce';
+import { fetchAllRoutes} from "../../actions";
+import { connect } from "react-redux";
 
-export default class RouteSearch extends React.Component {
+class RouteSearch extends React.Component {
+
+    static initialAction() {
+        return fetchAllRoutes();
+    }
 
     constructor(props) {
         super(props);
@@ -19,10 +25,11 @@ export default class RouteSearch extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/api/route/all').then(result => {
-            result.json().then(routes => this.setState({routes}), err => console.log(err))
-        }, err => {
-        });
+        if (!this.props.routes) {
+            this.props.dispatch(RouteSearch.initialAction());
+        } else {
+            this.setState({routes:this.props.routes});
+        }
     }
 
     handleChange(event) {
@@ -57,10 +64,10 @@ export default class RouteSearch extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            {this.state.routes.length === 0 &&
+                            {this.state.routes && this.state.routes.length === 0 &&
                             <div className="col-12 text-center"> Maršrutų neradome papildykite/pakeiskite paiešką</div>
                             }
-                            {this.state.routes.map(route =>
+                            {this.state.routes && this.state.routes.map(route =>
                                 <div key={route.url} className="col-md-4 my-2">
                                     <RouteCard bikeRoute={route}/>
                                 </div>
@@ -73,3 +80,10 @@ export default class RouteSearch extends React.Component {
         )
     }
 }
+
+
+const mapStateToProps = state => ({
+    routes: state.routes
+});
+
+export default connect(mapStateToProps)(RouteSearch);

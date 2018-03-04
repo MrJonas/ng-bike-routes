@@ -5,6 +5,7 @@ import NewsList from "./NewsList";
 import AddNewsForm from "./AddNewsForm";
 
 class News extends Component {
+
   static initialAction() {
     return fetchNews();
   }

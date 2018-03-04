@@ -45,7 +45,7 @@ const MainMap = withScriptjs(withGoogleMap(props =>
             lng: parseFloat(props.route.center_lng)
         } : DEFAULT_CENTER}
     >
-        {props.mode === 'all' && props.routes.map(route =>
+        {props.mode === 'all' && props.routes && props.routes.map(route =>
             <MarkerInfoWindow key={route.url}
                               icon={`/icons/${route.main_icon}-15.svg`}
                               text={route.short_description}

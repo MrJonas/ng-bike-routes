@@ -5,7 +5,6 @@ import WelcomeBox from "./components/welcome.box";
 import DistanceCounter from "./components/distance.counter";
 import LatestRoutes from "./components/latest.routes";
 
-
 class Home extends React.Component {
 
     render() {
