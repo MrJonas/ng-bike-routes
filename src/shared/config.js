@@ -1,2 +1,2 @@
 export const getAppUrl = () => process.env.NODE_ENV === 'production' ?
-    'https://testas.dviraciumarsrutai.lt/' : 'http://localhost:3000/';
+    'https://test.dviraciumarsrutai.lt/' : 'http://localhost:3000/';
