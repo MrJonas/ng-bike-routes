@@ -103,14 +103,7 @@ const serverConfig = {
                 loader: 'url-loader?limit=100000&name=./public/build/[hash].[ext]'
             }
         ]
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: 'production'
-            }
-        })
-    ]
+    }
 };
 
 module.exports = [browserConfig, serverConfig];
