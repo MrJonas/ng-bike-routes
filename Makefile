@@ -17,8 +17,8 @@ deploy:
 		docker stop $(CONTAINER_NAME) ; \
 		docker rm $(CONTAINER_NAME) ; \
 		docker build --tag $(IMAGE_NAME) . ; \
-		docker run -e "VIRTUAL_HOST=testas.dviraciumarsrutai.lt" \
-			-e "LETSENCRYPT_HOST=testas.dviraciumarsrutai.lt"  \
+		docker run -e "VIRTUAL_HOST=test.dviraciumarsrutai.lt" \
+			-e "LETSENCRYPT_HOST=test.dviraciumarsrutai.lt"  \
 			-e "LETSENCRYPT_EMAIL=jonas.l.antanaitis@gmail.com"  \
 			--name $(CONTAINER_NAME) --link mongo_instance:mongo_instance -d $(IMAGE_NAME) ; \
 		"
