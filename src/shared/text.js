@@ -36,7 +36,7 @@ const TEXT = {
         BY_TRAIN: "Maršrutas pasiekiamas traukiniu",
         INFO_TITLE: "Informacija",
         ATTRACTIONS_TITLE: "Lankytinos vietos",
-
+        ROUTE_MAP: "Žemėlapis",
     },
     ROUTE_SEARCH_PAGE: {
         SEARCH_INPUT_PLACEHOLDER: "Ieškoti",
