@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "webpack -w & nodemon ./dist-server/server.js",
     "clean": "rimraf dist & rimraf dist-server",
-    "build": "npm run clean & NODE_ENV=production webpack -p"
+    "build": "npm run clean & NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "keywords": [],
   "author": "",
