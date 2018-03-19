@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const browserConfig = {
     entry: "./src/browser/index.js",
@@ -59,6 +59,7 @@ const browserConfig = {
                 NODE_ENV: JSON.stringify('production')
             }
         }),
+        new UglifyJsPlugin(),
     ]
 };
 
