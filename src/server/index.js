@@ -10,6 +10,7 @@ import App from "../shared/App";
 import "source-map-support/register";
 import compression from 'compression';
 import api from "./api/index";
+import config from "./api/config"
 
 const app = express();
 
@@ -23,7 +24,6 @@ app.get("*", (req, res, next) => {
   const store = configureStore();
 
   const promises = routes.reduce((acc, route) => {
-    console.log(req.url);
     if (matchPath(req.url, route) && route.component && route.component.initialAction) {
         if(req.url.includes('/marsrutas/')) {
             acc.push(Promise.resolve(store.dispatch(route.component.initialAction(req.url.replace('/marsrutas/', '')))));
@@ -52,6 +52,6 @@ app.get("*", (req, res, next) => {
     .catch(next);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server is listening ${process.env.PORT || 3000}`);
+app.listen(config.expressPORT, () => {
+  console.log(`Server is listening ${config.expressPORT}`);
 });

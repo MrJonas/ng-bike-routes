@@ -55,11 +55,11 @@ const browserConfig = {
         new CopyWebpackPlugin([
             {from: 'src/assets'}
         ]),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
+        // new webpack.DefinePlugin({
+        //     'process.env': {
+        //         NODE_ENV: JSON.stringify('production')
+        //     }
+        // }),
     ]
 };
 

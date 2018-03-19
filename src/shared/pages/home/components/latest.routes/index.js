@@ -1,5 +1,6 @@
 import React from 'react';
 import RouteCard from './../../../../components/cards/route.card';
+import TEXT from "../../../../text";
 
 class LatestRoutes extends React.Component {
 
@@ -24,7 +25,7 @@ class LatestRoutes extends React.Component {
             <div className="container">
                 <div className="row text-center my-4">
                     <div className="col-12">
-                        <h3><b>NAUJAUSI MŪSŲ MARŠRUTAI</b></h3>
+                        <h3><b>{TEXT.MAIN_PAGE.LATEST_ROUTES_BOX.TITLE}</b></h3>
                     </div>
                 </div>
                 <div className="row">
@@ -36,7 +37,7 @@ class LatestRoutes extends React.Component {
                 </div>
                 <div className="row text-right my-4">
                     <div className="col-12">
-                        <a href="/#/marsrutai">Daugiau maršrutų...</a>
+                        <a href="/#/marsrutai">{TEXT.MAIN_PAGE.LATEST_ROUTES_BOX.MORE_ROUTES}</a>
                     </div>
                 </div>
             </div>

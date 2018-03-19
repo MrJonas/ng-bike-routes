@@ -7,6 +7,8 @@ import FacebookProvider, { Page, Share } from 'react-facebook';
 import {fetchOneRoute} from "../../actions";
 import {connect} from "react-redux";
 
+import TEXT from './../../text';
+
 const DMGallery = (props) =>
     <Gallery images={props.images} maxRows={3}/>;
 
@@ -35,7 +37,6 @@ class RoutePage extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
         if (!this.props.route ) {
             this.props.dispatch(RoutePage.initialAction(this.props.match.params.url));
         } else {
@@ -53,7 +54,7 @@ class RoutePage extends React.Component {
     render() {
         return (
             <div>
-                <div className="container my-4" style={{minHeight: 'calc(100vh - 200px)'}}>
+                <div className="container my-4 min-page-height">
                     {this.state.route &&
                     <div className="row">
                         <div className="col-md-8">
@@ -68,7 +69,7 @@ class RoutePage extends React.Component {
                             {this.state.route.atractions &&
                             <Card className="my-2">
                                 <CardBlock>
-                                    <CardTitle className="text-left">Lankytinos vietos</CardTitle>
+                                    <CardTitle className="text-left">{TEXT.ROUTE_PAGE.ATTRACTIONS_TITLE}</CardTitle>
                                     <ul>
                                         {this.state.route.atractions.map(atraction => {
                                                 return !atraction.show_only_in_map &&
@@ -84,10 +85,10 @@ class RoutePage extends React.Component {
                         <div className="col-md-4">
                             <Card className="mb-2">
                                 <CardBlock >
-                                    <CardTitle className="text-left">Informacija</CardTitle>
+                                    <CardTitle className="text-left">{TEXT.ROUTE_PAGE.INFO_TITLE}</CardTitle>
                                     <div>
                                         <i className="fa fa-road" aria-hidden="true"></i>
-                                        <span> {this.state.route.distance} km </span>
+                                        <span> {this.state.route.distance} {TEXT.OTHER.KM} </span>
                                     </div>
                                     <div>
                                         <i className="fa fa-clock-o" aria-hidden="true"></i>
@@ -96,20 +97,20 @@ class RoutePage extends React.Component {
                                     {this.state.route.access_by_train &&
                                     <div>
                                         <i className="fa fa-train" aria-hidden="true"></i>
-                                        <span> Maršrutas pasiekiamas traukiniu </span>
+                                        <span> {TEXT.ROUTE_PAGE.BY_TRAIN}</span>
                                     </div>
                                     }
                                 </CardBlock>
                             </Card>
                             <Card className="mb-2">
                                 <CardBlock >
-                                    <CardTitle className="text-left">Galerija</CardTitle>
+                                    <CardTitle className="text-left">{TEXT.ROUTE_PAGE.GALLERY}</CardTitle>
                                     <DMGallery images={this.state.images}/>
                                 </CardBlock>
                             </Card>
                             <Card className="mb-2">
                                 <CardBlock >
-                                    <CardTitle className="text-left">Sek mus facebook'e!</CardTitle>
+                                    <CardTitle className="text-left">{TEXT.ROUTE_PAGE.FOLLOW_US}</CardTitle>
                                     <FacebookProvider appId="fb-root">
                                         <Page href="https://www.facebook.com/dviraciumarsrutai.lt/" tabs=""/>
                                     </FacebookProvider>
@@ -130,6 +131,5 @@ class RoutePage extends React.Component {
 const mapStateToProps = state => ({
     route: state.route.route
 });
-
 
 export default connect(mapStateToProps)(RoutePage);

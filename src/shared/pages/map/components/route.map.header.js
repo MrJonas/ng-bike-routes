@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from 'reactstrap';
 import {Route} from 'react-router-dom';
+import TEXT from "./../../../text";
 
 export const RouteHeader = (props) =>
     props.route ?
@@ -11,7 +12,7 @@ export const RouteHeader = (props) =>
                     {props.route.title}
                     <span className="text-muted" style={{fontSize: '14px', marginLeft: '5px'}}>
                         <i className="fa fa-road mr-1" aria-hidden="true"></i>
-                        {props.route.distance} km
+                        {props.route.distance} {TEXT.OTHER.KM}
                         <i className="fa fa-clock-o ml-2 mr-1" aria-hidden="true"></i>
                         {props.route.duration}
                     </span>

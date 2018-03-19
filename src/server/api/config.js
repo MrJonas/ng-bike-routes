@@ -7,4 +7,4 @@ const config = process.env.NODE_ENV == 'production' ? {
     expressPORT: 3010
 };
 
-module.exports = config;
+export default config;

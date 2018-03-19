@@ -15,7 +15,7 @@ img {
 }
 
 .no-padding {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .messageBox {
@@ -264,4 +264,8 @@ body {
   .route-text h1 {
     font-size: 24px;
   }
+}
+
+.min-page-height {
+  min-height: calc(100vh - 120px)
 }

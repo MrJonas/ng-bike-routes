@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "NODE_ENV=development webpack -w & NODE_ENV=development nodemon ./dist-server/server.js",
+    "start:dev": "webpack -w & nodemon ./dist-server/server.js",
     "clean": "rimraf dist & rimraf dist-server",
-    "build": "npm run clean & NODE_ENV=production webpack"
+    "build": "npm run clean & NODE_ENV=production webpack -p"
   },
   "keywords": [],
   "author": "",
@@ -56,6 +56,7 @@
     "jest": "^22.4.2",
     "nodemon": "^1.11.0",
     "postcss-loader": "^2.0.6",
+    "redux-immutable-state-invariant": "^2.1.0",
     "rimraf": "^2.6.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "url-loader": "^1.0.1",

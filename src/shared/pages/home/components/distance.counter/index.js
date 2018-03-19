@@ -1,4 +1,5 @@
 import React from 'react';
+import TEXT from "../../../../text";
 
 class DistanceCounter extends React.Component {
 
@@ -26,25 +27,25 @@ class DistanceCounter extends React.Component {
                         <div className="container">
                             <div className="row text-center">
                                 <div className="col-12 text-center mb-3">
-                                    <h3><b>Šiuo metu puslapyje rasite:</b></h3>
+                                    <h3><b>{TEXT.MAIN_PAGE.STATS_BOX.TITLE}</b></h3>
                                 </div>
                             </div>
                             <div className="row text-center">
                                 <div className="col-md-3">
                                     <i className="fa fa-map-signs fa-4x" aria-hidden="true"></i><br/><br/>
-                                    <h4>{this.state.stats.count} maršrutai</h4>
+                                    <h4>{`${this.state.stats.count} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.ROUTES_COUNT}`}</h4>
                                 </div>
                                 <div className="col-md-3">
                                     <i className="fa fa-road fa-4x" aria-hidden="true"></i><br/><br/>
-                                    <h4>{this.state.stats.distance} kilometrai</h4>
+                                    <h4>{`${this.state.stats.distance} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.TOTAL_DISTANCE}`}</h4>
                                 </div>
                                 <div className="col-md-3">
                                     <i className="fa fa-camera-retro fa-4x" aria-hidden="true"></i><br/><br/>
-                                    <h4>{this.state.stats.atractions} Lankytinos vietos</h4>
+                                    <h4>{`${this.state.stats.atractions} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.ATTRACTION_COUNT}`}</h4>
                                 </div>
                                 <div className="col-md-3">
                                     <i className="fa fa-users fa-4x" aria-hidden="true"></i><br/><br/>
-                                    <h4>2 keliautojų ispūdžiai</h4>
+                                    <h4>{TEXT.MAIN_PAGE.STATS_BOX.STATS.NUMBER_OF_AUTHORS}</h4>
                                 </div>
                             </div>
                         </div>

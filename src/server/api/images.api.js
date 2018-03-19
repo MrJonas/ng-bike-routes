@@ -1,9 +1,9 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import Grid from 'gridfs-stream'
+import config from './config';
 
 const app = express()
-const config = require('./config')
 let gfs
 
 Grid.mongo = mongoose.mongo
