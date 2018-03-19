@@ -8,7 +8,7 @@ RUN npm install
 RUN npm run build
 
 # Expose port
-EXPOSE 3000
+EXPOSE 3010
 ENV NODE_ENV production
 # Start the apa
 
