@@ -70,7 +70,7 @@ class RouteSearch extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            {this.state.routes && this.state.routes.length === 0 &&
+                            {this.state.routes && !this.state.loading && this.state.routes.length === 0 &&
                             <div className="col-12 text-center">{TEXT.ROUTE_SEARCH_PAGE.NO_ROUTES_FOUND}</div>
                             }
                             {this.state.routes && this.state.routes.map(route =>

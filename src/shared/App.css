@@ -269,3 +269,7 @@ body {
 .min-page-height {
   min-height: calc(100vh - 120px)
 }
+
+.nav-link{
+  cursor: pointer;
+}

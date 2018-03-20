@@ -1,5 +1,4 @@
 import React from 'react';
-import 'whatwg-fetch';
 import {RouteMap} from './components/route.map';
 import {RouteList} from './components/route.map.side.list';
 import {RouteHeader} from './components/route.map.header';

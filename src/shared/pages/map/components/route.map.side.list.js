@@ -20,7 +20,7 @@ export class RouteList extends React.Component {
                                  style={{width: '100%'}}/>
                             <Route render={({history}) => (
                                 <div className="card-img-overlay p-0" style={{position: 'relative'}}
-                                     onClick={()=> history.push(`/marsrutas/${route.url}`)}>
+                                     onClick={() => history.push(`/marsrutas/${route.url}`)}>
                                     <div className="card-block m-0 p-2 text-left"
                                          onClick={() => this.props.toogleMode(index)}
                                          style={{bottom: '0px', position: 'absolute', width: '100%'}}>
