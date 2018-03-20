@@ -56,7 +56,7 @@ class RoutePage extends React.Component {
 ;
 
 const mapStateToProps = (state, ownProps) => {
-    if (state.route.route.url && ownProps.match.params.url.indexOf(state.route.route.url) === -1) {
+    if (state.route.route && ownProps.match.params.url.indexOf(state.route.route.url) === -1) {
         return {route: null};
     }
     return {route: state.route.route};
