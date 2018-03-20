@@ -32,7 +32,6 @@ export const getHtml = (initialData, markup) =>
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<link rel="icon" href="data:;base64,=">
 <title>Dviračių maršrutai</title>
 <link rel="stylesheet" href="/css/main.css">
 <script src="/bundle.js" defer></script>

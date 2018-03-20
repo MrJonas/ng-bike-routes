@@ -1,6 +1,10 @@
 {
  "short_name": "DM Blogas",
  "name": "Dviračių maršrutai",
+ "description": "Dviračių maršrutai lietuvoje",
+ "display": "browser",
+ "theme_color": "white",
+ "background_color": "white",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
