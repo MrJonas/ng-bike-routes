@@ -16,6 +16,10 @@ class RoutePage extends React.Component {
         return fetchOneRoute(url);
     }
 
+    constructor(props) {
+        super(props);
+    }
+
     componentDidMount() {
         if (!this.props.route) {
             this.props.dispatch(RoutePage.initialAction(this.props.match.params.url));
@@ -51,8 +55,11 @@ class RoutePage extends React.Component {
 }
 ;
 
-const mapStateToProps = state => ({
-    route: state.route.route
-});
+const mapStateToProps = (state, ownProps) => {
+    if (ownProps.match.params.url.indexOf(state.route.route.url) === -1) {
+        return {route: null};
+    }
+    return {route: state.route.route};
+};
 
 export default connect(mapStateToProps)(RoutePage);
