@@ -34,6 +34,7 @@
     "reactstrap": "4.8.0",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
     "serialize-javascript": "^1.4.0",
     "source-map-support": "^0.4.15",
