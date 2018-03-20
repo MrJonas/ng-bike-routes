@@ -1,6 +1,11 @@
 import serialize from "serialize-javascript";
 
-export const getHtml = (initialData, markup) =>
+const seoDefault = {
+    image: 'bike.jpg',
+    description: 'Mar&#x161;rut&#x173; &#x17E;em&#x117;lapis, lankytinos vietos, &#x12F;sp&#x16B;d&#x17E;iai bei patarimai &#x2014; visk&#x105; rasite bloge apie turistinius &#x17E;ygius dvira&#x10D;iais.'
+};
+
+export const getHtml = (initialData, markup, seo = seoDefault) =>
 `<!DOCTYPE html>
 <html lang="lt">
 <head>
@@ -10,9 +15,9 @@ export const getHtml = (initialData, markup) =>
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="title" content="Dvira&#x10D;i&#x173; mar&#x161;rutai Lietuvoje">
 <meta name="og:title" content="Dvira&#x10D;i&#x173; mar&#x161;rutai Lietuvoje">
-<meta name="description" content="Mar&#x161;rut&#x173; &#x17E;em&#x117;lapis, lankytinos vietos, &#x12F;sp&#x16B;d&#x17E;iai bei patarimai &#x2014; visk&#x105; rasite bloge apie turistinius &#x17E;ygius dvira&#x10D;iais.">
-<meta name="og:description" content="Mar&#x161;rut&#x173; &#x17E;em&#x117;lapis, lankytinos vietos, &#x12F;sp&#x16B;d&#x17E;iai bei patarimai &#x2014; visk&#x105; rasite bloge apie turistinius &#x17E;ygius dvira&#x10D;iais.">
-<meta name="og:image" content="http://dviraciumarsrutai.lt/bike.jpg">
+<meta name="description" content="${seo.description}">
+<meta name="og:description" content="${seo.description}">
+<meta name="og:image" content="https://dviraciumarsrutai.lt/${seo.image}">
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">

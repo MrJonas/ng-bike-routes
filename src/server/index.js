@@ -46,8 +46,15 @@ app.get("*", (req, res, next) => {
       );
 
       const initialData = store.getState();
-
-      res.send(getHtml(initialData, markup));
+      if(req.url.includes('/marsrutas/')) {
+          let seoInformation = {
+              image: `api/images/${initialData.route.route.main_image_id}`,
+              description: `${initialData.route.route.title}. ${initialData.route.route.short_description}`,
+          };
+          res.send(getHtml(initialData, markup, seoInformation));
+      } else {
+          res.send(getHtml(initialData, markup));
+      }
     })
     .catch(next);
 });
