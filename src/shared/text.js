@@ -21,7 +21,7 @@ const TEXT = {
             MORE_ROUTES: "Daugiau maršrutų...",
         },
         STATS_BOX: {
-            TITLE: "Puslapyje rasite:",
+            TITLE: "Puslapyje rasite",
             STATS: {
                 ROUTES_COUNT: "maršrutai",
                 TOTAL_DISTANCE: "kilometrai",

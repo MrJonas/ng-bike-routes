@@ -25,7 +25,7 @@ class RoutePage extends React.Component {
     render() {
         return (
             <div>
-                <div className="container-fluid my-5 min-page-height">
+                <div className="no-padding  my-3 my-lg-5 min-page-height">
                     {this.props.route &&
                     <div className="container">
                         <div className="row">

@@ -1,5 +1,4 @@
 import Home from "./pages/home";
-import News from "./pages/news";
 import About from "./pages/about";
 import RoutesSearch from "./pages/search.routes"
 import MapPage from "./pages/map"
@@ -10,10 +9,6 @@ const routes = [
         path: "/",
         exact: true,
         component: Home
-    },
-    {
-        path: "/news",
-        component: News
     },
     {
         path: "/marsrutai",

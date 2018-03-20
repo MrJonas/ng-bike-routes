@@ -32,6 +32,12 @@ class RouteSearch extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.routes && nextProps.routes.length > 0) {
+            this.setState({routes:nextProps.routes});
+        }
+    }
+
     handleChange(event) {
         this.setState({loading: true})
         this.setState({value: event.target.value});
