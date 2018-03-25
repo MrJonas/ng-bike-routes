@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import {Route} from "react-router-dom";
+import {Route, Router} from "react-router-dom";
 import routes from "./routes";
-import Header from "./components/header"
-
+import Header from "./components/header";
+import withTracker from './tracker';
 //App css:
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -11,7 +11,7 @@ import 'font-awesome/css/font-awesome.min.css';
 const App = () => (
     <div>
         <Header/>
-        <div>{routes.map((route, i) => <Route key={i} {...route} />)}</div>
+        <div>{routes.map((route, i) => <Route key={i} {...route} component={withTracker(route.component)}/>)}</div>
     </div>
 );
 

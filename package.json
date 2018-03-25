@@ -25,6 +25,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-facebook": "^4.2.1",
+    "react-ga": "^2.4.1",
     "react-google-maps": "^9.4.5",
     "react-grid-gallery": "^0.4.8",
     "react-lazyload": "^2.3.0",
