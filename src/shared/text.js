@@ -23,7 +23,7 @@ const TEXT = {
         STATS_BOX: {
             TITLE: "Puslapyje rasite",
             STATS: {
-                ROUTES_COUNT: "maršrutai",
+                ROUTES_COUNT: "maršrutų",
                 TOTAL_DISTANCE: "kilometrai",
                 ATTRACTION_COUNT: "lankytinos vietos",
                 NUMBER_OF_AUTHORS: "2-iejų keliautojų įspūdžiai"
