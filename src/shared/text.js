@@ -49,6 +49,8 @@ const TEXT = {
         INFO_TITLE: "Informacija",
         ATTRACTIONS_TITLE: "Lankytinos vietos",
         ROUTE_MAP: "Žemėlapis",
+        TRAVEL_DATE: "Maršrutas išbandytas",
+        CREDIT_TO: "Maršruto idėja"
     },
     ROUTE_SEARCH_PAGE: {
         SEARCH_INPUT_PLACEHOLDER: "Ieškoti",

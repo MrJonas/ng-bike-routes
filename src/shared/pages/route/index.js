@@ -9,6 +9,8 @@ import InfoCard from "./components/infoCard";
 import AttractionList from "./components/AtractionsList";
 import MainText from "./components/mainTextCard";
 import RoutePageMap from "./components/RoutePageMap";
+import CreditToIdea from "./components/creditToIdea";
+import TravelDate from "./components/travelDate";
 
 class RoutePage extends React.Component {
 
@@ -41,6 +43,8 @@ class RoutePage extends React.Component {
                                 <InfoCard route={this.props.route}/>
                                 <RoutePageMap route={this.props.route}/>
                                 <Gallery images={this.props.route.images}/>
+                                <CreditToIdea route={this.props.route}/>
+                                <TravelDate route={this.props.route}/>
                                 <FollowUS />
                             </div>
                         </div>
