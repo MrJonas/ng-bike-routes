@@ -1,5 +1,5 @@
 import React from 'react';
-import TEXT from "../../../../text";
+import TEXT, {getWordCaseByNumber, } from "../../../../text";
 
 class DistanceCounter extends React.Component {
 
@@ -33,15 +33,15 @@ class DistanceCounter extends React.Component {
                             <div className="row text-center">
                                 <div className="col-md-3">
                                     <i className="fa fa-map-signs fa-4x" aria-hidden="true"></i><br/><br/>
-                                    <h4>{`${this.state.stats.count} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.ROUTES_COUNT}`}</h4>
+                                    <h4>{`${this.state.stats.count} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.ROUTES_COUNT[getWordCaseByNumber(this.state.stats.count)]}`}</h4>
                                 </div>
                                 <div className="col-md-3">
                                     <i className="fa fa-road fa-4x" aria-hidden="true"></i><br/><br/>
-                                    <h4>{`${this.state.stats.distance} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.TOTAL_DISTANCE}`}</h4>
+                                    <h4>{`${this.state.stats.distance} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.TOTAL_DISTANCE[getWordCaseByNumber(this.state.stats.distance)]}`}</h4>
                                 </div>
                                 <div className="col-md-3">
                                     <i className="fa fa-camera-retro fa-4x" aria-hidden="true"></i><br/><br/>
-                                    <h4>{`${this.state.stats.atractions} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.ATTRACTION_COUNT}`}</h4>
+                                    <h4>{`${this.state.stats.atractions} ${TEXT.MAIN_PAGE.STATS_BOX.STATS.ATTRACTION_COUNT[getWordCaseByNumber(this.state.stats.atractions)]}`}</h4>
                                 </div>
                                 <div className="col-md-3">
                                     <i className="fa fa-users fa-4x" aria-hidden="true"></i><br/><br/>

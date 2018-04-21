@@ -23,9 +23,21 @@ const TEXT = {
         STATS_BOX: {
             TITLE: "Puslapyje rasite",
             STATS: {
-                ROUTES_COUNT: "maršrutų",
-                TOTAL_DISTANCE: "kilometrai",
-                ATTRACTION_COUNT: "lankytinos vietos",
+                ROUTES_COUNT: {
+                    VARDININKAS_VNS: 'maršrutas',
+                    VARDININKAS_DGS: 'maršrutai',
+                    KILMININKAS_DGS: 'maršrutų'
+                },
+                TOTAL_DISTANCE: {
+                    VARDININKAS_VNS: 'kilometras',
+                    VARDININKAS_DGS: 'kilometrai',
+                    KILMININKAS_DGS: 'kilometrų'
+                },
+                ATTRACTION_COUNT: {
+                    VARDININKAS_VNS: 'lankytina vieta',
+                    VARDININKAS_DGS: 'lankytinos vietos',
+                    KILMININKAS_DGS: 'lankytinų vietų'
+                },
                 NUMBER_OF_AUTHORS: "2-iejų keliautojų įspūdžiai"
             }
         }
@@ -59,6 +71,22 @@ const TEXT = {
     }
 }
 
+export const LT_LINKSNIAI = {
+    VARDININKAS_VNS: 'VARDININKAS_VNS',
+    VARDININKAS_DGS: 'VARDININKAS_DGS',
+    KILMININKAS_DGS: 'KILMININKAS_DGS'
+};
+
+export function getWordCaseByNumber(n) {
+    let number = n % 100;
+    if( number == 0) return LT_LINKSNIAI.KILMININKAS_DGS;
+    if( number == 1) return LT_LINKSNIAI.VARDININKAS_VNS;
+    if( number > 1 &&  number < 10 ) return LT_LINKSNIAI.VARDININKAS_DGS;
+    if( number >= 10 &&  number <= 20 ) return LT_LINKSNIAI.KILMININKAS_DGS;
+    number = number % 10;
+    if( number == 0) return LT_LINKSNIAI.KILMININKAS_DGS;
+    if( number == 1) return LT_LINKSNIAI.VARDININKAS_VNS;
+    return LT_LINKSNIAI.VARDININKAS_DGS;
+}
 
 export default TEXT;
-
