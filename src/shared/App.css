@@ -273,3 +273,6 @@ body {
 .nav-link{
   cursor: pointer;
 }
+
+/* Remove close icon from map InfoWindow*/
+.gm-style-iw + div {display: none;}
