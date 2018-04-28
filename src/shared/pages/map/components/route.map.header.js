@@ -21,9 +21,14 @@ export const RouteHeader = (props) =>
                 <p className="card-text">{props.route.short_description}</p>
             </div>
             <div className="col-md-3 p-4 m-0 text-center">
-                <Button color="secondary" size="md" className="pull-right" onClick={() => props.showAllRoutes()}>
+                <Button color="secondary" size="md" className="pull-right" style={{cursor: 'pointer'}} onClick={() => props.showAllRoutes()}>
                     <i className="fa fa-times" aria-hidden="true"></i>
                 </Button>
+                <Route render={({history}) => (
+                <Button color="primary" size="md" className="pull-right mx-1" style={{cursor: 'pointer'}} onClick={()=> history.push(`/marsrutas/${props.route.url}`)}>
+                    Daugiau
+                </Button>
+                 )}/>
             </div>
         </div> :
         <div></div>;

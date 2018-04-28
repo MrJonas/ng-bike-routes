@@ -70,6 +70,7 @@ const TEXT = {
     OTHER: {
         SHOW_ROUTE_BUTTON: "Plačiau",
         KM: "km",
+        MORE: "Daugiau"
     }
 }
 

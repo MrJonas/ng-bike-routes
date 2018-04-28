@@ -70,6 +70,7 @@ class MapPage extends React.Component {
                             routes={this.state.routes}
                             route={this.state.route}
                             mode={this.state.mode}
+                            toogleMode={(index) => this.setRoute(index)}
                         />
                     </div>
                 </div>

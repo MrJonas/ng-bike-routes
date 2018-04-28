@@ -27,6 +27,7 @@ const MarkerInfoWindow = compose(
         icon={props.icon}
         onMouseOver={props.onMouseOver}
         onMouseOut={props.onMouseOut}
+        onClick={props.toogleMode}
     >
         {props.text && props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
             <div style={{maxWidth: '200px'}}>
@@ -45,11 +46,12 @@ const MainMap = withScriptjs(withGoogleMap(props =>
             lng: parseFloat(props.route.center_lng)
         } : DEFAULT_CENTER}
     >
-        {props.mode === 'all' && props.routes && props.routes.map(route =>
+        {props.mode === 'all' && props.routes && props.routes.map((route, index) =>
             <MarkerInfoWindow key={route.url}
                               icon={`/icons/${route.main_icon}-15.svg`}
                               title={route.title}
                               text={route.short_description}
+                              toogleMode={() => props.toogleMode(index)}
                               position={{lat: parseFloat(route.center_lat), lng: parseFloat(route.center_lng)}}/>
         )}
         {props.mode === 'one' && props.route &&
@@ -73,4 +75,5 @@ export const RouteMap = (props) =>
         loadingElement={<div style={{height: `100%`}}/>}
         containerElement={<div style={{height: `100%`}}/>}
         mapElement={<div style={{height: `100%`}}/>}
+        toogleMode={(index) => props.toogleMode(index)}
     />;

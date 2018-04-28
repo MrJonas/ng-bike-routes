@@ -180,7 +180,7 @@ body {
 .map-view {
   width: auto;
   overflow: hidden;
-  height: calc(100vh - 141px);
+  height: calc(100vh - 146px);
 }
 
 .large-map-view {
@@ -198,7 +198,7 @@ body {
 .show-map-control-panel {
   height: 0px;
   padding: 0px;
-  height: 85px;
+  height: 90px;
   -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
