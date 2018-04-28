@@ -67,6 +67,10 @@ const TEXT = {
     FOOTER: {
         TEXT: "Dviračių maršrutai",
     },
+    COOKIES: {
+        BUTTON: "Sutinku",
+        CONSENT: "Sklandžiam svetainės veikimui, jūsų naršymo patirties gerinimui naudojame slapukus. Paspaudę „Sutinku“ arba naršydami toliau sutiksite su slapukų įrašymu."
+    },
     OTHER: {
         SHOW_ROUTE_BUTTON: "Plačiau",
         KM: "km",

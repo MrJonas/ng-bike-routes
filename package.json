@@ -23,6 +23,7 @@
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "4.11.9",
     "react": "^15.6.1",
+    "react-cookie-consent": "^1.0.4",
     "react-dom": "^15.6.1",
     "react-facebook": "^4.2.1",
     "react-ga": "^2.4.1",
