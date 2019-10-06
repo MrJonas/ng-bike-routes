@@ -1,4 +1,4 @@
-# React Server side rendering example
+# ng-bikes-routes
 
 Features: 
 
